@@ -12,13 +12,16 @@ const mockUser = {
         age: 43
     }
 };
+const JWT_SECRET="my_super_secure_secret"
 
 router.post('/login', (req, res) => {
+    const payload = { username : mockUser.username}
+    const token = jwt.sign(payload, JWT_SECRET)
 
+    res.json({token})
 });
 
 router.get('/profile', (req, res) => {
-  
 });
 
 
