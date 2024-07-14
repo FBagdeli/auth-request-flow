@@ -50,7 +50,7 @@ router.get('/profile', (req, res) => {
             } )
         }
     } catch (error) {
-        
+        return res.json(error)
     }
 });
 
